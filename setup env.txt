@@ -1,0 +1,49 @@
+1.vagrant+xshell
+下载并安装virtualbox
+https://www.virtualbox.org/wiki/Downloads
+
+下载并安装vagrant
+https://www.vagrantup.com/downloads.html
+
+下载ubuntu/xenial64的box（注意选择的是Ubuntu 16.04 LTS 64位系统镜像，不要搞错了，后面换源的时候如果一个14.04的box使用16.04的源，会报错的W: Unknown Multi-Arch type 'no' for package 'compiz-core'的错误的，血的教训）
+
+访问https://app.vagrantup.com/ubuntu/boxes/xenial64
+
+点击最新的版本，得到链接https://app.vagrantup.com/ubuntu/boxes/xenial64/versions/20180510.0.0
+
+在尾部手动添加/providers/virtualbox.box补全下载链接，使用迅雷下载(更快)
+https://app.vagrantup.com/ubuntu/boxes/xenial64/versions/20180510.0.0/providers/virtualbox.box
+
+作者：u14e
+链接：https://www.jianshu.com/p/d9cc60a6ee6b
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+https://www.cnblogs.com/yangjig/p/6014198.html    vim速查
+
+vagrant box add [title] [boxes link]
+vagrant init [title]
+vagrant up
+
+login xshell
+username:vagrant
+password:vagrant
+
+换源
+sudo -s 获取管理员权限
+cp /etc/apt/sources.list /etc/apt/sources.list.backup
+sudo vim /etc/apt/sources.list
+deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+sudo apt-get update
