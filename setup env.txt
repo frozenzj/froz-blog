@@ -12,8 +12,10 @@ https://www.vagrantup.com/downloads.html
 点击最新的版本，得到链接https://app.vagrantup.com/ubuntu/boxes/xenial64/versions/20180510.0.0
 
 在尾部手动添加/providers/virtualbox.box补全下载链接，使用迅雷下载(更快)
+ubuntu14.04LTS
 https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20181203.0.1/providers/virtualbox.box
-
+ubuntu16.04LTS
+http://cloud-images.ubuntu.com/xenial/20181207/xenial-server-cloudimg-amd64-vagrant.box
 作者：u14e
 链接：https://www.jianshu.com/p/d9cc60a6ee6b
 來源：简书
@@ -55,6 +57,14 @@ sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:jonathonf/python-3.6
 sudo apt-get update
 sudo apt-get install python3.6
+
+#origin：/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+#after:export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+
 python3.6 -m pip install -U pip
+
+sudo vi /usr/bin/pip3
+from pip._internal import main
+
 sudo -H python3.6 -m pip install ipython numpy pandas requests re bs4 lxml scrapy matplotlib jupyter notebook
 ---------------------
