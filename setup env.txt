@@ -29,7 +29,7 @@ vagrant up
 login xshell
 username:vagrant
 password:vagrant
-
+https://www.cnblogs.com/ChinaHook/p/6087632.html
 换源
 sudo -s 获取管理员权限
 cp /etc/apt/sources.list /etc/apt/sources.list.backup
