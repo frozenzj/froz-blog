@@ -63,11 +63,10 @@ sudo apt-get install python3.6
 
 
 curl https://bootstrap.pypa.io/get-pip.py | sudo python3.6
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 #python3.6 -m pip install -U pip
-
-#sudo vi /usr/bin/pip3
-#from pip._internal import main
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+sudo vi /usr/bin/pip3
+from pip._internal import main
 
 sudo -H python3.6 -m pip install ipython numpy pandas requests re bs4 lxml scrapy matplotlib jupyter notebook
 ---------------------
